@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'crispy_forms',
-    'accounts',
-    'internships',
-    'applications',
+    'apps.accounts',
+    'apps.internships',
+    'apps.applications',
 ]
 
 MIDDLEWARE = [
@@ -116,6 +116,7 @@ REST_FRAMEWORK = {
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
+AUTH_USER_MODEL = 'accounts.User'  # If you have a custom user model
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -129,3 +130,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
